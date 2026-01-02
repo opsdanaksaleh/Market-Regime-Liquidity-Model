@@ -1,37 +1,39 @@
+<!DOCTYPE html>
 <html>
-   <head>
-      <link rel="stylesheet" href="">
-   </head>
-   <body>
-      <article id=”content1″ contenteditable=”true”>
-         <p>
-         <form id=”uploadForm” action=”Your script end point” method=”POST”>
-         <input type=”hidden” value=”” name=”fileContent” id=”fileContent”>
-         <input type=”hidden” value=”” name=”filename” id=”filename”>
-         
-         <label> Name : </label><input required type=”text” value=”” name=”name” id=”name”>
-         <label> Email :</label> <input required type=”text” value=”” name=”email” id=”email”>
-         <label> Contact : </label><input required type=”text” value=”” name=”contact” id=”contact”>
-         <label> SkillSets :</label> <input required type=”text” value=”” name=”skillsets” id=”skillsets”>
-         <label> LinkedIn Account:</label><input type=”text” value=”” name=”linkedinUrl” id=”linkedinUrl”>
-         
-         </form>
-         <input required id=”attach” name=”attach” type=”file”/>
-         <input value=”Submit” type=”button” onclick=”UploadFile();” />
+<body>
 
-         <script>
-            function UploadFile() {
-               var reader = new FileReader();
-               var file = document.getElementById(‘attach’).files[0];
-               reader.onload = function(){
-                  document.getElementById(‘fileContent’).value=reader.result;
-                  document.getElementById(‘filename’).value=file.name;
-                  document.getElementById(‘uploadForm’).submit();
-                  }
-                  reader.readAsDataURL(file);
-                  }
-         </script>
-         </p>
-      </article>
-   </body>
+<h2>HTML Forms</h2>
+
+<article id="content1″ contenteditable="true">
+   <p>
+   <form id="uploadForm" action="Your script end point" method="POST">
+   <input type="hidden" value="" name="fileContent" id="fileContent">
+   <input type="hidden" value="" name="filename" id="filename">
+   
+   <label> Name : </label><input required type="text" value="" name="name" id="name">
+   <label> Email :</label> <input required type="text" value="" name="email" id="email">
+   <label> Contact : </label><input required type="text" value="" name="contact" id="contact">
+   <label> SkillSets :</label> <input required type="text" value="" name="skillsets" id="skillsets">
+   <label> LinkedIn Account:</label><input type="text" value="" name="linkedinUrl" id="linkedinUrl">
+   
+   </form>
+   <input required id="attach" name="attach" type="file"/>
+   <input value="Submit" type="button" onclick="UploadFile();" />
+
+   <script>
+      function UploadFile() {
+         var reader = new FileReader();
+         var file = document.getElementById(‘attach’).files[0];
+         reader.onload = function(){
+            document.getElementById(‘fileContent’).value=reader.result;
+            document.getElementById(‘filename’).value=file.name;
+            document.getElementById(‘uploadForm’).submit();
+            }
+            reader.readAsDataURL(file);
+            }
+   </script>
+   </p>
+</article>
+
+</body>
 </html>
